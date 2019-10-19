@@ -18,5 +18,11 @@ const generateTaskDOM= function(index,aTask){
         checkbox.className='task-completed'
         document.getElementById(index+1).appendChild(checkbox)
     }
+    document.getElementById(index+1).appendChild(document.createElement('br'))
+    const deleteButton= document.createElement('button')
+    deleteButton.innerText="Delete"
+    deleteButton.id=`${aTask.text}`
+    deleteButton.className='task-deleted'
+    document.getElementById(index+1).appendChild(deleteButton)
     
 }

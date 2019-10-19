@@ -1,11 +1,19 @@
 document.querySelector('#notes').addEventListener('change',function(e){
-    if (e.target.checked==true){
+    if (e.target.checked===true){
         tasks[findItemIndex({'text':e.target.id})]['completed']=true
         showTasks(getIncompleteTasks())
     }
 })
 
 
+
+document.querySelector('#notes').addEventListener('click',function(e){
+    if (e.target.className==='task-deleted'){
+        const taskIndex= findItemIndex({'text':e.target.id})
+        tasks.splice(taskIndex,1)
+        showTasks(getIncompleteTasks())
+    }
+})
 
 document.querySelector('#add-delete-form').addEventListener('submit',function(e){
         e.preventDefault()
@@ -131,41 +139,6 @@ document.getElementById('all-tasks').addEventListener('change',function(e){
     }
 
 })
-
-
-
-document.querySelector('#delete-task').addEventListener('click', function(e){
-    const inputText=document.querySelector("#delete-task-input").value
-    
-    
-    if (getIncompleteTasks().length>0){
-        if (inputText===''){
-            alert('Please type in something first :)')
-        }
-        else{
-            const index=parseInt(inputText, 10)
-            if (!isNaN(index)){
-                if(index>=1 && index<=getIncompleteTasks().length){
-                    const removedItem=getIncompleteTasks().splice(index-1,1)[0]
-                    tasks.splice(findItemIndex(removedItem),1)
-                    showTasks(getIncompleteTasks())
-                }
-                else{
-                    alert('Invalid number!')
-                }
-            }
-
-            else{
-                alert('Please type in a number :)')
-            }
-            document.querySelector("#delete-task-input").value=""
-        }
-    }
-    else{
-        alert('Incomplete tasks list is empty!')
-    }
-})
-
 
 
 window.onbeforeunload = function() {
