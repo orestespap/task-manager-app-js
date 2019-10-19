@@ -18,17 +18,35 @@ const findItemIndex= function(removedItem){
 
 const showTasks= function(tasks){
     document.querySelector('#notes').innerHTML=''
-    
+    const allTasksChecked=document.getElementById('all-tasks').checked
+    const completedTasksChecked=document.getElementById('completed-tasks').checked
+    console.log(allTasksChecked)
     let textToDisplay=''
     const tasksArraySize=tasks.length
+
     if (tasksArraySize===1){
-        textToDisplay=`Just 1 task left!`
+        if (allTasksChecked || completedTasksChecked){
+            textToDisplay="1 task!"
+        }
+        else{
+            textToDisplay=`Just 1 task left!`
+        }
     }
     else if (tasksArraySize<=3){
-       textToDisplay=`Almost there! Just ${tasksArraySize} tasks to go!`
+        if (allTasksChecked || completedTasksChecked){
+            textToDisplay= `${tasksArraySize} tasks!`
+        }
+        else{
+            textToDisplay=`Almost there! Just ${tasksArraySize} tasks to go!`
+        }
     }
     else{
-        textToDisplay=`${tasksArraySize} tasks to go!`
+        if (allTasksChecked || completedTasksChecked){
+            textToDisplay= `${tasksArraySize} tasks!`
+        }
+        else{
+            textToDisplay=`${tasksArraySize} tasks to go!`
+        }
     }
     
     const header=createHeader2(textToDisplay)
