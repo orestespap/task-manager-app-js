@@ -1,3 +1,4 @@
+
 const createHeader2= function(text){
     const header= document.createElement('h2')
     header.id='header2-1'
@@ -6,6 +7,7 @@ const createHeader2= function(text){
 }
 
 const generateTaskDOM= function(index,aTask){
+    
     let aP= document.createElement('p')
     aP.innerHTML=`${index+1}.) ${aTask['text']}`
     aP.className='note-class'
@@ -14,14 +16,14 @@ const generateTaskDOM= function(index,aTask){
     if (!aTask['completed']){
         const checkbox= document.createElement('input')
         checkbox.type='checkbox'
-        checkbox.id=`${aTask.text}`
+        checkbox.id=aTask['taskID']+'_!_checkbox'
         checkbox.className='task-completed'
         document.getElementById(index+1).appendChild(checkbox)
     }
     document.getElementById(index+1).appendChild(document.createElement('br'))
     const deleteButton= document.createElement('button')
     deleteButton.innerText="Delete"
-    deleteButton.id=`${aTask.text}`
+    deleteButton.id=aTask['taskID']+'_!_deleteButton'
     deleteButton.className='task-deleted'
     document.getElementById(index+1).appendChild(deleteButton)
     

@@ -1,15 +1,14 @@
 document.querySelector('#notes').addEventListener('change',function(e){
     if (e.target.checked===true){
-        tasks[findItemIndex({'text':e.target.id})]['completed']=true
+        tasks[findItemIndex(e.target.id.split('_!_')[0])]['completed']=true
         showTasks(getIncompleteTasks())
     }
 })
 
 
-
 document.querySelector('#notes').addEventListener('click',function(e){
     if (e.target.className==='task-deleted'){
-        const taskIndex= findItemIndex({'text':e.target.id})
+        const taskIndex= findItemIndex(e.target.id.split('_!_')[0])
         tasks.splice(taskIndex,1)
         showTasks(getIncompleteTasks())
     }
@@ -20,10 +19,8 @@ document.querySelector('#add-delete-form').addEventListener('submit',function(e)
     }
 )
 
-
-
 document.querySelector('#add-task').addEventListener('click', function(e){
-    const newTask={'text':document.querySelector("#add-task-input").value,'completed':false,'priority':"MP"}
+    const newTask={'taskID':uuidv4(),'text':document.querySelector("#add-task-input").value,'completed':false,'priority':"MP"}
     
     if (newTask.text==''){
         alert('Please type in something first :)')

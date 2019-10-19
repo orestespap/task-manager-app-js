@@ -12,7 +12,7 @@ const getIncompleteTasks= function(){
 
 const findItemIndex= function(removedItem){
     return tasks.findIndex(function(aTask){
-        return aTask.text.toLowerCase()===removedItem.text.toLowerCase()
+        return aTask.taskID===removedItem
     })
 }
 
@@ -25,7 +25,7 @@ const showTasks= function(tasks){
     if (tasks.length>0){
         tasks.forEach(function(aTask){ 
             const index= tasks.findIndex(function(element,index,array){
-                return element.text==aTask.text
+                return element.taskID==aTask.taskID
                 })  
                 generateTaskDOM(index,aTask)
             })
