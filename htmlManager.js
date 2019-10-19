@@ -24,7 +24,7 @@ const generateTaskDOM= function(index,aTask){
     else{
         checkbox.checked=true
     }
-
+    
     document.getElementById(index+1).appendChild(checkbox)
     document.getElementById(index+1).appendChild(document.createElement('br'))
     const deleteButton= document.createElement('button')

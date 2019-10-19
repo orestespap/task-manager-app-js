@@ -3,13 +3,14 @@
 <html>
     <head>
         <title>Task Manager App</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
         <link href="/favicon.ico" type="image/x-icon" rel="icon" />
         
     </head>
 
-    <body style="background-color:lightblue; margin:0 auto; text-align:center;">
+    <body>
         
-        <h1 id="incomplete-tasks" style="color:lightcoral;">My Task Manager</h1>
+        <h1 id="main-header-h1">My Task Manager</h1>
         
         <form id=add-delete-form>
             
@@ -27,11 +28,11 @@
         <br><br>
         <button id=hide-tasks>Hide Tasks</button>
         <br><br>
-        <label><input type="checkbox" id="all-tasks">All tasks</type></label>
+        <label class="main-filters"><input type="checkbox" id="all-tasks">All tasks</type></label>
         <br><br>
-        <label><input type="checkbox" id="completed-tasks">Completed tasks</type></label>
+        <label class="main-filters"><input type="checkbox" id="completed-tasks">Completed tasks</type></label>
         <br><br>
-        <label><input type="checkbox" id="hp-tasks">High-priority tasks</type></label>
+        <label class="main-filters"><input type="checkbox" id="hp-tasks">High-priority tasks</type></label>
         
         
 
@@ -41,7 +42,6 @@
         <script type="text/javascript" src="htmlManager.js"></script>
         <script type="text/javascript" src="todo.js"></script>
         <script type="text/javascript" src="eventListeners.js"></script>
-           
-    
+        
     </body>
 </html>
