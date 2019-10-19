@@ -1,3 +1,20 @@
-body{background-color:lightblue; margin:0 auto; text-align:center;}
-.main-filters{font-family: Segoe UI; font-size: 21px; font-style: normal; font-variant: normal; font-weight: 450; line-height: 28.4px;}
-#main-header-h1{color:lightcoral;font-family: Segoe UI; font-size: 50px; font-style: normal; font-variant: normal; font-weight: 700; line-height: 26.4px;}
+body{background-color:lightblue; 
+     margin:0 auto; 
+     text-align:center;}
+
+
+.main-filters{font-family: Segoe UI; 
+              font-size: 21px; 
+              font-style: normal; 
+              font-variant: normal; 
+              font-weight: 450; 
+              line-height: 28.4px;}
+
+              
+#main-header-h1{color:lightcoral;
+                font-family: Segoe UI; 
+                font-size: 50px; 
+                font-style: normal; 
+                font-variant: normal; 
+                font-weight: 700; 
+                line-height: 26.4px;}
