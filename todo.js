@@ -18,11 +18,23 @@ const findItemIndex= function(removedItem){
 
 const showTasks= function(tasks){
     document.querySelector('#notes').innerHTML=''
-   
-    const header=createHeader2(`You have ${tasks.length} task(s)!`)
+    
+    let textToDisplay=''
+    const tasksArraySize=tasks.length
+    if (tasksArraySize===1){
+        textToDisplay=`Just 1 task left!`
+    }
+    else if (tasksArraySize<=3){
+       textToDisplay=`Almost there! Just ${tasksArraySize} tasks to go!`
+    }
+    else{
+        textToDisplay=`${tasksArraySize} tasks to go!`
+    }
+    
+    const header=createHeader2(textToDisplay)
     document.querySelector('#notes').appendChild(header)
     
-    if (tasks.length>0){
+    if (tasksArraySize>0){
         tasks.forEach(function(aTask){ 
             const index= tasks.findIndex(function(element,index,array){
                 return element.taskID==aTask.taskID
