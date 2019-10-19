@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Task Manager App</title>
+        <link href="/favicon.ico" type="image/x-icon" rel="icon" />
+    </head>
+
+    <body style="background-color:lightblue; margin:0 auto; text-align:center;">
+        
+        <h1 id="incomplete-tasks" style="color:lightcoral;">My Task Manager</h1>
+        
+        <form id=add-delete-form>
+            
+            <input id='add-task-input', placeholder="Add task", name="addTask"></input>
+            <input id='add-task-priority-input', placeholder="Set priority", name="addTaskPriority"></input>
+            <button id='add-task'>Add</button>
+            
+            <br>
+            <br>
+            <input id='delete-task-input', placeholder="Delete task", name="deleteTask"></input>
+            
+            <button id='delete-task'>Delete</button>
+        </form>
+        
+        <br>
+        
+        <input id='search-task-input', placeholder="Search task"></input>
+        <button id='search-task'>Search</button>
+        
+        <br><br>
+        <button id=hide-tasks>Hide Tasks</button>
+        <br><br>
+        <label><input type="checkbox" id="all-tasks">All tasks</type></label>
+        <br><br>
+        <label><input type="checkbox" id="completed-tasks">Completed tasks</type></label>
+        <br><br>
+        <label><input type="checkbox" id="hp-tasks">High-priority tasks</type></label>
+        
+        
+
+        <div id=notes></div>
+        <script type="text/javascript" src="loadTasks.js"></script>
+        <script type="text/javascript" src="htmlManager.js"></script>
+        <script type="text/javascript" src="todo.js"></script>
+        <script type="text/javascript" src="eventListeners.js"></script>
+           
+    
+    </body>
+</html>
