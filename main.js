@@ -20,11 +20,18 @@ const showTasks= function(tasks){
     document.querySelector('#notes').innerHTML=''
     const allTasksChecked=document.getElementById('all-tasks').checked
     const completedTasksChecked=document.getElementById('completed-tasks').checked
-    console.log(allTasksChecked)
+    
     let textToDisplay=''
     const tasksArraySize=tasks.length
-
-    if (tasksArraySize===1){
+    if (tasksArraySize===0){
+        if (allTasksChecked || completedTasksChecked){
+            textToDisplay="No tasks!"
+        }
+        else{
+            textToDisplay="Woot! Every task has been completed!"
+        }
+    }
+    else if (tasksArraySize===1){
         if (allTasksChecked || completedTasksChecked){
             textToDisplay="1 task!"
         }
@@ -62,7 +69,7 @@ const showTasks= function(tasks){
         }
     else{
         let aP= document.createElement('p')
-        aP.innerHTML='No available tasks:('
+        aP.innerHTML=':)'
         aP.className='note-class'
         document.querySelector('#notes').appendChild(aP)
     }
