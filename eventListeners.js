@@ -1,8 +1,8 @@
 document.querySelector('#notes').addEventListener('change',function(e){
-    if (e.target.checked===true){
-        tasks[findItemIndex(e.target.id.split('_!_')[0])]['completed']=true
-        showTasks(getIncompleteTasks())
-    }
+    const taskIndex=findItemIndex(e.target.id.split('_!_')[0])
+    tasks[taskIndex]['completed']=!tasks[taskIndex]['completed']
+    showTasks(getIncompleteTasks())
+    
 })
 
 
@@ -105,11 +105,11 @@ document.getElementById('completed-tasks').addEventListener('change',function(e)
         )
     }
     else{
+
         showTasks(getIncompleteTasks())
     }
 
 })
-
 
 
 document.getElementById('hp-tasks').addEventListener('change',function(e){

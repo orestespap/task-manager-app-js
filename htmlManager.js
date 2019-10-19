@@ -13,13 +13,19 @@ const generateTaskDOM= function(index,aTask){
     aP.className='note-class'
     aP.id=index+1
     document.querySelector('#notes').appendChild(aP)
+    const checkbox= document.createElement('input')
+    checkbox.type='checkbox'
+    checkbox.id=aTask['taskID']+'_!_checkbox'
+    checkbox.className='task-completed'
+    
     if (!aTask['completed']){
-        const checkbox= document.createElement('input')
-        checkbox.type='checkbox'
-        checkbox.id=aTask['taskID']+'_!_checkbox'
-        checkbox.className='task-completed'
-        document.getElementById(index+1).appendChild(checkbox)
+       checkbox.checked=false
     }
+    else{
+        checkbox.checked=true
+    }
+
+    document.getElementById(index+1).appendChild(checkbox)
     document.getElementById(index+1).appendChild(document.createElement('br'))
     const deleteButton= document.createElement('button')
     deleteButton.innerText="Delete"
