@@ -9,7 +9,7 @@ const createHeader2= function(text){
 const generateTaskDOM= function(index,aTask){
     
     let aP= document.createElement('p')
-    aP.innerHTML=`${index+1}.) ${aTask['text']}`
+    aP.textContent=`${index+1}.) ${aTask['text']}`
     aP.className='note-class'
     aP.id=index+1
     document.querySelector('#notes').appendChild(aP)
@@ -32,5 +32,14 @@ const generateTaskDOM= function(index,aTask){
     deleteButton.id=aTask['taskID']+'_!_deleteButton'
     deleteButton.className='task-deleted'
     document.getElementById(index+1).appendChild(deleteButton)
+    
+    document.getElementById(index+1).appendChild(document.createElement('br'))
+    document.getElementById(index+1).appendChild(document.createElement('br'))
+    
+    const editButton= document.createElement('button')
+    editButton.innerText="Edit"
+    editButton.id=aTask['taskID']+'_!_editButton'
+    editButton.className='edit-task'
+    document.getElementById(index+1).appendChild(editButton)
     
 }

@@ -3,7 +3,7 @@ body{background-color:lightblue;
      text-align:center;}
 
 
-.main-filters{font-family: Segoe UI; 
+.main-filters,#edit-task-original{font-family: Segoe UI; 
               font-size: 21px; 
               font-style: normal; 
               font-variant: normal; 
@@ -11,10 +11,23 @@ body{background-color:lightblue;
               line-height: 28.4px;}
 
               
-#main-header-h1{color:lightcoral;
+#main-header-h1,#edit-task-main-header{color:lightcoral;
                 font-family: Segoe UI; 
                 font-size: 50px; 
                 font-style: normal; 
                 font-variant: normal; 
                 font-weight: 700; 
                 line-height: 26.4px;}
+
+
+#edit-task-text-area{height:200px;
+                     width:500px}
+
+#edit-task-second-header{color:rgb(11, 77, 7);
+     font-family: Segoe UI; 
+     font-size: 22px; 
+     font-style: normal; 
+     font-variant: normal; 
+     font-weight: 700; 
+     line-height: 26.4px;
+}

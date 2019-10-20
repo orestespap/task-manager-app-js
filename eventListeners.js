@@ -1,3 +1,5 @@
+showTasks(getIncompleteTasks())
+
 document.querySelector('#notes').addEventListener('change',function(e){
     const taskIndex=findItemIndex(e.target.id.split('_!_')[0])
     tasks[taskIndex]['completed']=!tasks[taskIndex]['completed']
@@ -11,6 +13,12 @@ document.querySelector('#notes').addEventListener('click',function(e){
         const taskIndex= findItemIndex(e.target.id.split('_!_')[0])
         tasks.splice(taskIndex,1)
         showTasks(getIncompleteTasks())
+    }
+    else if(e.target.className=='edit-task'){
+        const taskIndex= findItemIndex(e.target.id.split('_!_')[0])
+        const url= document.createElement('a')
+        url.href=`edit-task.html#${tasks[taskIndex]["taskID"]}`
+        location.assign(url.href);
     }
 })
 

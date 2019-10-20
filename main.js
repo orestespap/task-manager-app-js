@@ -80,5 +80,3 @@ const hideTasks= function(){
     const header= createHeader2(`No tasks!`)
     document.querySelector('#notes').appendChild(header)
 }
-
-showTasks(getIncompleteTasks())
