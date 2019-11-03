@@ -1,6 +1,6 @@
 //DOM
 
-const tasks= loadTasks()
+let tasks= loadTasks()
 
 console.log('todo.js script file')
 
